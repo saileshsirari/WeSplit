@@ -167,7 +167,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B0C5A613-E490-40C4-A11C-C0E14B9D4EDE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeSplit/ContentView.swift"
@@ -208,7 +208,164 @@
                   endingLineNumber = "63"
                   offsetFromSymbolStart = "676">
                </Location>
+               <Location
+                  uuid = "B0C5A613-E490-40C4-A11C-C0E14B9D4EDE - b92d3b9b7b8decb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeSplit.HabitClass.init() -&gt; WeSplit.HabitClass"
+                  moduleName = "WeSplit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saileshsirari/Documents/WeSplit/WeSplit/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "676">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21C6A554-E57A-42F4-AD1B-F3B2BE387FB3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeSplit/CupcakeCorner.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "placeOrder()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "21C6A554-E57A-42F4-AD1B-F3B2BE387FB3 - 9a7a03cdffd3565f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for WeSplit.CheckoutView.placeOrder() async -&gt; ()"
+                  moduleName = "WeSplit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saileshsirari/Documents/WeSplit/WeSplit/CupcakeCorner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "1312">
+               </Location>
+               <Location
+                  uuid = "21C6A554-E57A-42F4-AD1B-F3B2BE387FB3 - eed99f2433cbc5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for WeSplit.CheckoutView.placeOrder() async -&gt; ()"
+                  moduleName = "WeSplit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saileshsirari/Documents/WeSplit/WeSplit/CupcakeCorner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "1220">
+               </Location>
+               <Location
+                  uuid = "21C6A554-E57A-42F4-AD1B-F3B2BE387FB3 - b9195ce1fc914952"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for WeSplit.CheckoutView.placeOrder() async -&gt; ()"
+                  moduleName = "WeSplit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saileshsirari/Documents/WeSplit/WeSplit/CupcakeCorner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "796">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3BBC9B8D-2C0C-461A-80F5-4EFBC61A90A7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeSplit/CupcakeCorner.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "placeOrder()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3BBC9B8D-2C0C-461A-80F5-4EFBC61A90A7 - 9a7a03cdffd3565f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for WeSplit.CheckoutView.placeOrder() async -&gt; ()"
+                  moduleName = "WeSplit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saileshsirari/Documents/WeSplit/WeSplit/CupcakeCorner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "1312">
+               </Location>
+               <Location
+                  uuid = "3BBC9B8D-2C0C-461A-80F5-4EFBC61A90A7 - eed99f2433cbc5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for WeSplit.CheckoutView.placeOrder() async -&gt; ()"
+                  moduleName = "WeSplit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saileshsirari/Documents/WeSplit/WeSplit/CupcakeCorner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "1220">
+               </Location>
+               <Location
+                  uuid = "3BBC9B8D-2C0C-461A-80F5-4EFBC61A90A7 - b9195ce1fc914952"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for WeSplit.CheckoutView.placeOrder() async -&gt; ()"
+                  moduleName = "WeSplit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saileshsirari/Documents/WeSplit/WeSplit/CupcakeCorner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "796">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "077BD36B-651C-4D68-BFD2-6C8A4B1FEB87"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeSplit/CupcakeCorner.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -20,6 +20,7 @@
 		A042CBC42CB3BBCF001A3A79 /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBC32CB3BBCF001A3A79 /* Color-Theme.swift */; };
 		A042CBC62CB3EDF8001A3A79 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBC52CB3EDF8001A3A79 /* MissionView.swift */; };
 		A042CBC82CB3F304001A3A79 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBC72CB3F304001A3A79 /* AstronautView.swift */; };
+		A042CBCA2CB66DD3001A3A79 /* CupcakeCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBC92CB66DD3001A3A79 /* CupcakeCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		A042CBC32CB3BBCF001A3A79 /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
 		A042CBC52CB3EDF8001A3A79 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		A042CBC72CB3F304001A3A79 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
+		A042CBC92CB66DD3001A3A79 /* CupcakeCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCorner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				A042CBBD2CB3B24B001A3A79 /* Astronaut.swift */,
 				A042CBBF2CB3B2E6001A3A79 /* Bundle-Decodable.swift */,
+				A042CBC92CB66DD3001A3A79 /* CupcakeCorner.swift */,
 				A042CBC32CB3BBCF001A3A79 /* Color-Theme.swift */,
 				A042CBC12CB3B409001A3A79 /* Mission.swift */,
 				A042CBC52CB3EDF8001A3A79 /* MissionView.swift */,
@@ -172,6 +175,7 @@
 				A042CBC82CB3F304001A3A79 /* AstronautView.swift in Sources */,
 				A042CBC42CB3BBCF001A3A79 /* Color-Theme.swift in Sources */,
 				A042CAFA2CAD6D75001A3A79 /* ContentView.swift in Sources */,
+				A042CBCA2CB66DD3001A3A79 /* CupcakeCorner.swift in Sources */,
 				A042CBC02CB3B2E6001A3A79 /* Bundle-Decodable.swift in Sources */,
 				A042CAF82CAD6D75001A3A79 /* WeSplitApp.swift in Sources */,
 				A042CBBE2CB3B24B001A3A79 /* Astronaut.swift in Sources */,
