@@ -21,6 +21,12 @@
 		A042CBC62CB3EDF8001A3A79 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBC52CB3EDF8001A3A79 /* MissionView.swift */; };
 		A042CBC82CB3F304001A3A79 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBC72CB3F304001A3A79 /* AstronautView.swift */; };
 		A042CBCA2CB66DD3001A3A79 /* CupcakeCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBC92CB66DD3001A3A79 /* CupcakeCorner.swift */; };
+		A042CBCC2CB7A6D0001A3A79 /* Bookworm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBCB2CB7A6D0001A3A79 /* Bookworm.swift */; };
+		A042CBCE2CBCED1C001A3A79 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBCD2CBCED1C001A3A79 /* Book.swift */; };
+		A042CBD02CBCEE06001A3A79 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBCF2CBCEE06001A3A79 /* AddBookView.swift */; };
+		A042CBD22CBD27FA001A3A79 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBD12CBD27FA001A3A79 /* RatingView.swift */; };
+		A042CBD42CBD28F3001A3A79 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBD32CBD28F3001A3A79 /* DetailView.swift */; };
+		A042CBD62CBD2937001A3A79 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBD52CBD2937001A3A79 /* EmojiRatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +45,12 @@
 		A042CBC52CB3EDF8001A3A79 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		A042CBC72CB3F304001A3A79 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 		A042CBC92CB66DD3001A3A79 /* CupcakeCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCorner.swift; sourceTree = "<group>"; };
+		A042CBCB2CB7A6D0001A3A79 /* Bookworm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookworm.swift; sourceTree = "<group>"; };
+		A042CBCD2CBCED1C001A3A79 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		A042CBCF2CBCEE06001A3A79 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		A042CBD12CBD27FA001A3A79 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		A042CBD32CBD28F3001A3A79 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		A042CBD52CBD2937001A3A79 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,15 +88,21 @@
 			isa = PBXGroup;
 			children = (
 				A042CBBD2CB3B24B001A3A79 /* Astronaut.swift */,
+				A042CBCF2CBCEE06001A3A79 /* AddBookView.swift */,
+				A042CBCB2CB7A6D0001A3A79 /* Bookworm.swift */,
+				A042CBCD2CBCED1C001A3A79 /* Book.swift */,
 				A042CBBF2CB3B2E6001A3A79 /* Bundle-Decodable.swift */,
 				A042CBC92CB66DD3001A3A79 /* CupcakeCorner.swift */,
 				A042CBC32CB3BBCF001A3A79 /* Color-Theme.swift */,
+				A042CAF92CAD6D75001A3A79 /* ContentView.swift */,
+				A042CBD32CBD28F3001A3A79 /* DetailView.swift */,
 				A042CBC12CB3B409001A3A79 /* Mission.swift */,
 				A042CBC52CB3EDF8001A3A79 /* MissionView.swift */,
+				A042CBD12CBD27FA001A3A79 /* RatingView.swift */,
 				A042CAF72CAD6D75001A3A79 /* WeSplitApp.swift */,
-				A042CAF92CAD6D75001A3A79 /* ContentView.swift */,
 				A042CAFB2CAD6D77001A3A79 /* Assets.xcassets */,
 				A042CAFD2CAD6D77001A3A79 /* Preview Content */,
+				A042CBD52CBD2937001A3A79 /* EmojiRatingView.swift */,
 			);
 			path = WeSplit;
 			sourceTree = "<group>";
@@ -171,10 +189,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A042CBC62CB3EDF8001A3A79 /* MissionView.swift in Sources */,
+				A042CBCC2CB7A6D0001A3A79 /* Bookworm.swift in Sources */,
 				A042CBC22CB3B409001A3A79 /* Mission.swift in Sources */,
+				A042CBD42CBD28F3001A3A79 /* DetailView.swift in Sources */,
+				A042CBCE2CBCED1C001A3A79 /* Book.swift in Sources */,
 				A042CBC82CB3F304001A3A79 /* AstronautView.swift in Sources */,
 				A042CBC42CB3BBCF001A3A79 /* Color-Theme.swift in Sources */,
 				A042CAFA2CAD6D75001A3A79 /* ContentView.swift in Sources */,
+				A042CBD22CBD27FA001A3A79 /* RatingView.swift in Sources */,
+				A042CBD02CBCEE06001A3A79 /* AddBookView.swift in Sources */,
+				A042CBD62CBD2937001A3A79 /* EmojiRatingView.swift in Sources */,
 				A042CBCA2CB66DD3001A3A79 /* CupcakeCorner.swift in Sources */,
 				A042CBC02CB3B2E6001A3A79 /* Bundle-Decodable.swift in Sources */,
 				A042CAF82CAD6D75001A3A79 /* WeSplitApp.swift in Sources */,
