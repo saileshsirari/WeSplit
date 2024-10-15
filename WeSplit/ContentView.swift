@@ -7,16 +7,172 @@
 
 import SwiftUI
 import SwiftData
+import PhotosUI
+import CoreImage
+import CoreImage.CIFilterBuiltins
+import StoreKit
 
+
+struct ImageFilterContentView : View {
+    
+    @State private var processedImage: Image?
+    @State private var filterIntensity = 0.5
+    @State private var selectedItem: PhotosPickerItem?
+    @State private var showingFilters = false
+    @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
+    @AppStorage("filterCount") var filterCount = 0
+    @Environment(\.requestReview) var requestReview
+    
+    let context = CIContext()
+    var body: some View {
+        NavigationStack {
+            VStack {
+                Spacer()
+
+                PhotosPicker(selection: $selectedItem) {
+                    if let processedImage {
+                        processedImage
+                            .resizable()
+                            .scaledToFit()
+                    } else {
+                        ContentUnavailableView("No Picture", systemImage: "photo.badge.plus", description: Text("Import a photo to get started"))
+                    }
+                }.onChange(of: selectedItem, loadImage)
+
+
+                Spacer()
+
+                HStack {
+                    Text("Intensity")
+                    Slider(value: $filterIntensity)
+                        .onChange(of: filterIntensity, applyProcessing)
+                }
+                .padding(.vertical)
+
+                HStack {
+                    Button("Change Filter", action: changeFilter)
+
+
+                    Spacer()
+
+                    if let processedImage {
+                        ShareLink(item: processedImage, preview: SharePreview("Instafilter image", image: processedImage))
+                    }
+                }
+            }
+            .padding([.horizontal, .bottom])
+            .navigationTitle("Instafilter")
+            .confirmationDialog("Select a filter", isPresented: $showingFilters) {
+                Button("Crystallize") { setFilter(CIFilter.crystallize()) }
+                Button("Edges") { setFilter(CIFilter.edges()) }
+                Button("Gaussian Blur") { setFilter(CIFilter.gaussianBlur()) }
+                Button("Pixellate") { setFilter(CIFilter.pixellate()) }
+                Button("Sepia Tone") { setFilter(CIFilter.sepiaTone()) }
+                Button("Unsharp Mask") { setFilter(CIFilter.unsharpMask()) }
+                Button("Vignette") { setFilter(CIFilter.vignette()) }
+                Button("Cancel", role: .cancel) { }
+            }
+        }
+    }
+    @MainActor  func setFilter(_ filter: CIFilter) {
+        currentFilter = filter
+        loadImage()
+        filterCount += 1
+
+        if filterCount >= 3 {
+            requestReview()
+        }
+    }
+    func changeFilter() {
+        showingFilters = true
+
+    }
+    
+    func loadImage() {
+        Task {
+            guard let imageData = try await selectedItem?.loadTransferable(type: Data.self) else { return }
+            guard let inputImage = UIImage(data: imageData) else { return }
+
+            let beginImage = CIImage(image: inputImage)
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            applyProcessing()
+        }
+    }
+    
+    func applyProcessing() {
+        let inputKeys = currentFilter.inputKeys
+
+        if inputKeys.contains(kCIInputIntensityKey) { currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey) }
+        if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey) }
+        if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey) }
+
+        guard let outputImage = currentFilter.outputImage else { return }
+        guard let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else { return }
+
+        let uiImage = UIImage(cgImage: cgImage)
+        processedImage = Image(uiImage: uiImage)
+    }
+}
+struct SwiftDataContentView: View {
+    
+    @Environment(\.modelContext) var modelContext
+    @Query(filter: #Predicate<User> { user in
+        if user.name.localizedStandardContains("R") {
+            if user.city == "London" {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
+    }, sort: \User.name)
+    
+    var users: [User]
+    
+    @State private var path = [User]()
+    
+    
+    var body: some View {
+        NavigationStack(path: $path) {
+            List(users) { user in
+                NavigationLink(value: user) {
+                    Text(user.name)
+                }
+            }
+            .navigationTitle("Users")
+            .navigationDestination(for: User.self) { user in
+                EditUserView(user: user)
+            }.toolbar {
+                
+                
+                Button("Add Samples", systemImage: "plus") {
+                    try? modelContext.delete(model: User.self)
+                    let first = User(name: "Ed Sheeran", city: "London", joinDate: .now.addingTimeInterval(86400 * -10))
+                    let second = User(name: "Rosa Diaz", city: "New York", joinDate: .now.addingTimeInterval(86400 * -5))
+                    let third = User(name: "Roy Kent", city: "London", joinDate: .now.addingTimeInterval(86400 * 5))
+                    let fourth = User(name: "Johnny English", city: "London", joinDate: .now.addingTimeInterval(86400 * 10))
+                    
+                    modelContext.insert(first)
+                    modelContext.insert(second)
+                    modelContext.insert(third)
+                    modelContext.insert(fourth)
+                }
+            }
+        }
+    }
+    
+    
+}
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     @Query(sort: [
         SortDescriptor(\Book.title),
         SortDescriptor(\Book.author)
     ]) var books: [Book]
-
+    
     @State private var showingAddScreen = false
-
+    
     var body: some View {
         NavigationStack {
             List {
@@ -25,11 +181,11 @@ struct ContentView: View {
                         HStack {
                             EmojiRatingView(rating: book.rating)
                                 .font(.largeTitle)
-//
+                            //
                             VStack(alignment: .leading) {
                                 Text(book.title)
                                     .font(.headline)
-
+                                
                                 Text(book.author)
                                     .foregroundStyle(.secondary)
                             }
@@ -46,7 +202,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     EditButton()
                 }
-
+                
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Add Book", systemImage: "plus") {
                         showingAddScreen.toggle()
@@ -58,7 +214,7 @@ struct ContentView: View {
             }
         }
     }
-
+    
     func deleteBooks(at offsets: IndexSet) {
         for offset in offsets {
             let book = books[offset]
@@ -100,8 +256,8 @@ class HabitClass {
     var list  = [ Habit](){
         didSet{
             if let encoded = try? JSONEncoder().encode(list) {
-                       UserDefaults.standard.set(encoded, forKey: "Activities")
-                   }
+                UserDefaults.standard.set(encoded, forKey: "Activities")
+            }
         }
     }
     
@@ -112,7 +268,7 @@ class HabitClass {
                 return
             }
         }
-
+        
         list = []
     }
 }
@@ -124,17 +280,17 @@ struct Habits:View {
     private var habitClass :HabitClass = HabitClass()
     
     
- 
+    
     @State private var showingSheet = false
     
     struct SheetView: View {
         @Environment(\.dismiss) var dismiss
-      
-
+        
+        
         @State var habit :Habit = Habit(title: "",description: "")
         @State
         var habitClass : HabitClass
-    
+        
         var body: some View {
             Section("Enter your activity details ") {
                 
@@ -146,7 +302,7 @@ struct Habits:View {
                 Button("Done") {
                     if( addHabit(habit.title,habit.description) ){
                         habitClass.list.append(habit)
-                       
+                        
                     }
                     dismiss()
                 }
@@ -164,15 +320,15 @@ struct Habits:View {
             }.sheet(isPresented: $showingSheet) {
                 SheetView(habitClass: habitClass)
             }
-           // print(habitClass.list[1].title)
-          
+            // print(habitClass.list[1].title)
+            
             
             List(habitClass.list){habit in
                 habitListItem(habit: habit)
             }.navigationDestination(for: Habit.self) { habit in
                 DestinationView( habit: habit,habitClass: habitClass)
-             
-               
+                
+                
             }.navigationTitle("Habits")
                 .navigationBarTitleDisplayMode(.inline)
             
@@ -181,26 +337,26 @@ struct Habits:View {
 }
 
 struct DestinationView: View {
-
-   
+    
+    
     var habit: Habit
     
-  @State var habitClass  :  HabitClass
+    @State var habitClass  :  HabitClass
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         Button("Finish  \(habit.title)"){
-           // habit = Habit.co
+            // habit = Habit.co
             
-          
+            
             if let ind =  habitClass.list.firstIndex(of: habit){
-                    if(ind != -1){
-                        habitClass.list.remove(at: ind)
-                    }
+                if(ind != -1){
+                    habitClass.list.remove(at: ind)
+                }
                 dismiss()
                 
-                }
-           
+            }
+            
         }
     }
 }
@@ -288,18 +444,18 @@ func listItem(_ mission: Mission, astronauts: [String: Astronaut]) -> some View 
 
 func habitListItem(habit: Habit) -> some View {
     return NavigationLink(value: habit) {
-      
-            VStack {
-                Text(habit.title)
-                    .font(.headline)
-                    .foregroundStyle(.black)
-                Text(habit.description)
-                    .font(.caption)
-                    .foregroundStyle(.black)
-            }
-            .padding(.vertical)
-            .frame(maxWidth: .infinity)
-
+        
+        VStack {
+            Text(habit.title)
+                .font(.headline)
+                .foregroundStyle(.black)
+            Text(habit.description)
+                .font(.caption)
+                .foregroundStyle(.black)
+        }
+        .padding(.vertical)
+        .frame(maxWidth: .infinity)
+        
     }
 }
 

@@ -13,8 +13,8 @@ import SwiftData
 struct WeSplitApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ImageFilterContentView()
         }
-        .modelContainer(for: Book.self)
+        .modelContainer(for: User.self)
     }
 }
