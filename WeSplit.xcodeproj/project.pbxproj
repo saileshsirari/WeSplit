@@ -29,6 +29,10 @@
 		A042CBD62CBD2937001A3A79 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBD52CBD2937001A3A79 /* EmojiRatingView.swift */; };
 		A042CBDA2CBD3788001A3A79 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBD92CBD3788001A3A79 /* User.swift */; };
 		A042CBDC2CBD37F6001A3A79 /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBDB2CBD37F6001A3A79 /* EditUserView.swift */; };
+		A042CBDE2CBF9180001A3A79 /* BucketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBDD2CBF9180001A3A79 /* BucketList.swift */; };
+		A042CBE02CBFA4A3001A3A79 /* MarkerEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBDF2CBFA4A3001A3A79 /* MarkerEditView.swift */; };
+		A042CBE22CBFA702001A3A79 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBE12CBFA702001A3A79 /* Result.swift */; };
+		A042CBE42CC0DCEE001A3A79 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBE32CC0DCEE001A3A79 /* ContentView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,10 @@
 		A042CBD52CBD2937001A3A79 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
 		A042CBD92CBD3788001A3A79 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A042CBDB2CBD37F6001A3A79 /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
+		A042CBDD2CBF9180001A3A79 /* BucketList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketList.swift; sourceTree = "<group>"; };
+		A042CBDF2CBFA4A3001A3A79 /* MarkerEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerEditView.swift; sourceTree = "<group>"; };
+		A042CBE12CBFA702001A3A79 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		A042CBE32CC0DCEE001A3A79 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 		A042CAEB2CAD6D75001A3A79 = {
 			isa = PBXGroup;
 			children = (
+				A042CBE12CBFA702001A3A79 /* Result.swift */,
 				A042CBC72CB3F304001A3A79 /* AstronautView.swift */,
 				A042CB052CB02C28001A3A79 /* start.txt */,
 				A042CBB72CB3B1B7001A3A79 /* astronauts.json */,
@@ -96,6 +105,7 @@
 				A042CBCB2CB7A6D0001A3A79 /* Bookworm.swift */,
 				A042CBCD2CBCED1C001A3A79 /* Book.swift */,
 				A042CBBF2CB3B2E6001A3A79 /* Bundle-Decodable.swift */,
+				A042CBDD2CBF9180001A3A79 /* BucketList.swift */,
 				A042CBC92CB66DD3001A3A79 /* CupcakeCorner.swift */,
 				A042CBC32CB3BBCF001A3A79 /* Color-Theme.swift */,
 				A042CAF92CAD6D75001A3A79 /* ContentView.swift */,
@@ -103,12 +113,13 @@
 				A042CBC12CB3B409001A3A79 /* Mission.swift */,
 				A042CBC52CB3EDF8001A3A79 /* MissionView.swift */,
 				A042CBD12CBD27FA001A3A79 /* RatingView.swift */,
-				A042CAF72CAD6D75001A3A79 /* WeSplitApp.swift */,
 				A042CBD52CBD2937001A3A79 /* EmojiRatingView.swift */,
 				A042CBD92CBD3788001A3A79 /* User.swift */,
 				A042CBDB2CBD37F6001A3A79 /* EditUserView.swift */,
 				A042CAFB2CAD6D77001A3A79 /* Assets.xcassets */,
 				A042CAFD2CAD6D77001A3A79 /* Preview Content */,
+				A042CBDF2CBFA4A3001A3A79 /* MarkerEditView.swift */,
+				A042CBE32CC0DCEE001A3A79 /* ContentView-ViewModel.swift */,
 			);
 			path = WeSplit;
 			sourceTree = "<group>";
@@ -116,6 +127,7 @@
 		A042CAFD2CAD6D77001A3A79 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				A042CAF72CAD6D75001A3A79 /* WeSplitApp.swift */,
 				A042CAFE2CAD6D77001A3A79 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -198,18 +210,22 @@
 				A042CBCC2CB7A6D0001A3A79 /* Bookworm.swift in Sources */,
 				A042CBC22CB3B409001A3A79 /* Mission.swift in Sources */,
 				A042CBDC2CBD37F6001A3A79 /* EditUserView.swift in Sources */,
+				A042CBE02CBFA4A3001A3A79 /* MarkerEditView.swift in Sources */,
 				A042CBD42CBD28F3001A3A79 /* DetailView.swift in Sources */,
+				A042CBE22CBFA702001A3A79 /* Result.swift in Sources */,
 				A042CBDA2CBD3788001A3A79 /* User.swift in Sources */,
 				A042CBCE2CBCED1C001A3A79 /* Book.swift in Sources */,
 				A042CBC82CB3F304001A3A79 /* AstronautView.swift in Sources */,
 				A042CBC42CB3BBCF001A3A79 /* Color-Theme.swift in Sources */,
 				A042CAFA2CAD6D75001A3A79 /* ContentView.swift in Sources */,
 				A042CBD22CBD27FA001A3A79 /* RatingView.swift in Sources */,
+				A042CBDE2CBF9180001A3A79 /* BucketList.swift in Sources */,
 				A042CBD02CBCEE06001A3A79 /* AddBookView.swift in Sources */,
 				A042CBD62CBD2937001A3A79 /* EmojiRatingView.swift in Sources */,
 				A042CBCA2CB66DD3001A3A79 /* CupcakeCorner.swift in Sources */,
 				A042CBC02CB3B2E6001A3A79 /* Bundle-Decodable.swift in Sources */,
 				A042CAF82CAD6D75001A3A79 /* WeSplitApp.swift in Sources */,
+				A042CBE42CC0DCEE001A3A79 /* ContentView-ViewModel.swift in Sources */,
 				A042CBBE2CB3B24B001A3A79 /* Astronaut.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +362,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -374,6 +391,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

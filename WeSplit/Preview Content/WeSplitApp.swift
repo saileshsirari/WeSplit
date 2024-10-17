@@ -13,7 +13,7 @@ import SwiftData
 struct WeSplitApp: App {
     var body: some Scene {
         WindowGroup {
-            ImageFilterContentView()
+            BucketList()
         }
         .modelContainer(for: User.self)
     }

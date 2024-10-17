@@ -15,7 +15,7 @@ import StoreKit
 
 struct ImageFilterContentView : View {
     
-    @State private var processedImage: Image?
+    @State private var processedImage: Image? = nil
     @State private var filterIntensity = 0.5
     @State private var selectedItem: PhotosPickerItem?
     @State private var showingFilters = false
@@ -45,12 +45,15 @@ struct ImageFilterContentView : View {
                 HStack {
                     Text("Intensity")
                     Slider(value: $filterIntensity)
+                        .disabled(selectedItem == nil)
                         .onChange(of: filterIntensity, applyProcessing)
+                        
                 }
                 .padding(.vertical)
 
                 HStack {
                     Button("Change Filter", action: changeFilter)
+                    
 
 
                     Spacer()
