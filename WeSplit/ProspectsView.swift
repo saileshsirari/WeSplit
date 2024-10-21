@@ -18,7 +18,7 @@ struct ProspectsView: View {
     @Query(sort: \Prospect.name) var prospects: [Prospect]
     @Environment(\.modelContext) var modelContext
     @State private var isShowingScanner = false
-
+    
     var filter: FilterType = FilterType.none
     var title: String {
         switch filter {
@@ -33,11 +33,11 @@ struct ProspectsView: View {
     
     init(filter: FilterType) {
         self.filter = filter
-
+        
         if filter != .none {
             let showContactedOnly = filter == .contacted
-
-            _prospects = Query(filter: #Predicate {
+            
+            _prospects = Query( filter: #Predicate {
                 $0.isContacted == showContactedOnly
             }, sort: [SortDescriptor(\Prospect.name)])
         }
@@ -45,22 +45,22 @@ struct ProspectsView: View {
     
     func addNotification(for prospect: Prospect) {
         let center = UNUserNotificationCenter.current()
-
+        
         let addRequest = {
             let content = UNMutableNotificationContent()
             content.title = "Contact \(prospect.name)"
             content.subtitle = prospect.emailAddress
             content.sound = UNNotificationSound.default
-
+            
             var dateComponents = DateComponents()
             dateComponents.hour = 9
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
             let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-
+            
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger1)
             center.add(request)
         }
-
+        
         center.getNotificationSettings { settings in
             if settings.authorizationStatus == .authorized {
                 addRequest()
@@ -77,20 +77,21 @@ struct ProspectsView: View {
     }
     
     func handleScan(result: Result <ScanResult, ScanError>) {
-       isShowingScanner = false
+        isShowingScanner = false
         switch result {
         case .success(let result):
             let details = result.string.components(separatedBy: "\n")
             guard details.count == 2 else { return }
-
+            
             let person = Prospect(name: details[0], emailAddress: details[1], isContacted: false)
-
+            
             modelContext.insert(person)
         case .failure(let error):
             print("Scanning failed: \(error.localizedDescription)")
         }
     }
     @State private var selectedProspects = Set<Prospect>()
+
     func delete() {
         for prospect in selectedProspects {
             modelContext.delete(prospect)
@@ -116,19 +117,35 @@ struct ProspectsView: View {
                         }
                     }
                     
-                   
+                    
                     
                 }
                 .sheet(isPresented: $isShowingScanner) {
                     CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: handleScan)
                 }
-            List(prospects, selection: $selectedProspects) { prospect in
-                VStack(alignment: .leading) {
-                    Text(prospect.name)
-                        .font(.headline)
-                    Text(prospect.emailAddress)
-                        .foregroundStyle(.secondary)
-                }.swipeActions {
+            //  ForEach(prospects, id: \.name) { prospect in
+            List(prospects, id: \.self , selection: $selectedProspects) { prospect in
+                
+                NavigationLink {
+                    EditProspectView(prospect: prospect)
+                    
+                } label: {
+                    
+                    VStack(alignment: .leading) {
+                        
+                        Text(prospect.name)
+                            .font(.headline)
+                        Text(prospect.emailAddress)
+                            .foregroundStyle(.secondary)
+                        if(prospect.isContacted ){
+                            Image(systemName:  "person.crop.circle.badge.xmark")
+                        }else {
+                            Image(systemName: "person.crop.circle.fill.badge.checkmark")
+                        }
+                    }
+                }
+                
+                .swipeActions {
                     Button("Delete", systemImage: "trash", role: .destructive) {
                         modelContext.delete(prospect)
                     }
@@ -148,13 +165,28 @@ struct ProspectsView: View {
                     }
                     .tint(.orange)
                 }.tag(prospect)
-
+                
             }
         }
+        
+        
     }
     
 }
 
+struct EditProspectView: View {
+    @Bindable var prospect: Prospect
+
+    var body: some View {
+        Form {
+            TextField("Name", text: $prospect.name)
+            TextField("City", text: $prospect.emailAddress)
+          
+        }
+        .navigationTitle("Edit User")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
 #Preview {
     ProspectsView(filter: FilterType.contacted)
         .modelContainer(for: Prospect.self)
