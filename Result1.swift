@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Result: Codable {
+struct Result1: Codable {
     let query: WikipediaQuery
     
 }

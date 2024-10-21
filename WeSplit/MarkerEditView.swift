@@ -99,7 +99,7 @@ extension MarkerEditView {
                 let (data, _) = try await URLSession.shared.data(from: url)
                 
                 // we got some data back!
-                let items = try JSONDecoder().decode(Result.self, from: data)
+                let items = try JSONDecoder().decode(Result1.self, from: data)
                 
                 // success – convert the array values to our pages array
                 pages = items.query.pages.values.sorted()

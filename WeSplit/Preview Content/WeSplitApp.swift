@@ -13,8 +13,9 @@ import SwiftData
 struct WeSplitApp: App {
     var body: some Scene {
         WindowGroup {
-            BucketList()
+            MeetingContentView()
         }
-        .modelContainer(for: User.self)
+        .modelContainer(for: Prospect.self)
+//        .modelContainer(for: User.self)
     }
 }

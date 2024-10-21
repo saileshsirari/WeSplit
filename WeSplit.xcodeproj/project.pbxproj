@@ -31,8 +31,13 @@
 		A042CBDC2CBD37F6001A3A79 /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBDB2CBD37F6001A3A79 /* EditUserView.swift */; };
 		A042CBDE2CBF9180001A3A79 /* BucketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBDD2CBF9180001A3A79 /* BucketList.swift */; };
 		A042CBE02CBFA4A3001A3A79 /* MarkerEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBDF2CBFA4A3001A3A79 /* MarkerEditView.swift */; };
-		A042CBE22CBFA702001A3A79 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBE12CBFA702001A3A79 /* Result.swift */; };
+		A042CBE22CBFA702001A3A79 /* Result1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBE12CBFA702001A3A79 /* Result1.swift */; };
 		A042CBE42CC0DCEE001A3A79 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBE32CC0DCEE001A3A79 /* ContentView-ViewModel.swift */; };
+		A042CBE62CC62C7B001A3A79 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBE52CC62C7B001A3A79 /* ProspectsView.swift */; };
+		A042CBEA2CC62CA9001A3A79 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBE92CC62CA9001A3A79 /* MeView.swift */; };
+		A042CBEC2CC62CE8001A3A79 /* MeetingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBEB2CC62CE8001A3A79 /* MeetingContentView.swift */; };
+		A042CBEE2CC62EB4001A3A79 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBED2CC62EB4001A3A79 /* Prospect.swift */; };
+		A042CBF12CC63BED001A3A79 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = A042CBF02CC63BED001A3A79 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +66,12 @@
 		A042CBDB2CBD37F6001A3A79 /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
 		A042CBDD2CBF9180001A3A79 /* BucketList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketList.swift; sourceTree = "<group>"; };
 		A042CBDF2CBFA4A3001A3A79 /* MarkerEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerEditView.swift; sourceTree = "<group>"; };
-		A042CBE12CBFA702001A3A79 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		A042CBE12CBFA702001A3A79 /* Result1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result1.swift; sourceTree = "<group>"; };
 		A042CBE32CC0DCEE001A3A79 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
+		A042CBE52CC62C7B001A3A79 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
+		A042CBE92CC62CA9001A3A79 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		A042CBEB2CC62CE8001A3A79 /* MeetingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingContentView.swift; sourceTree = "<group>"; };
+		A042CBED2CC62EB4001A3A79 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A042CBF12CC63BED001A3A79 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +89,7 @@
 		A042CAEB2CAD6D75001A3A79 = {
 			isa = PBXGroup;
 			children = (
-				A042CBE12CBFA702001A3A79 /* Result.swift */,
+				A042CBE12CBFA702001A3A79 /* Result1.swift */,
 				A042CBC72CB3F304001A3A79 /* AstronautView.swift */,
 				A042CB052CB02C28001A3A79 /* start.txt */,
 				A042CBB72CB3B1B7001A3A79 /* astronauts.json */,
@@ -120,6 +130,10 @@
 				A042CAFD2CAD6D77001A3A79 /* Preview Content */,
 				A042CBDF2CBFA4A3001A3A79 /* MarkerEditView.swift */,
 				A042CBE32CC0DCEE001A3A79 /* ContentView-ViewModel.swift */,
+				A042CBE52CC62C7B001A3A79 /* ProspectsView.swift */,
+				A042CBE92CC62CA9001A3A79 /* MeView.swift */,
+				A042CBEB2CC62CE8001A3A79 /* MeetingContentView.swift */,
+				A042CBED2CC62EB4001A3A79 /* Prospect.swift */,
 			);
 			path = WeSplit;
 			sourceTree = "<group>";
@@ -149,6 +163,9 @@
 			dependencies = (
 			);
 			name = WeSplit;
+			packageProductDependencies = (
+				A042CBF02CC63BED001A3A79 /* CodeScanner */,
+			);
 			productName = WeSplit;
 			productReference = A042CAF42CAD6D75001A3A79 /* WeSplit.app */;
 			productType = "com.apple.product-type.application";
@@ -177,6 +194,9 @@
 				Base,
 			);
 			mainGroup = A042CAEB2CAD6D75001A3A79;
+			packageReferences = (
+				A042CBEF2CC63BED001A3A79 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = A042CAF52CAD6D75001A3A79 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -212,9 +232,12 @@
 				A042CBDC2CBD37F6001A3A79 /* EditUserView.swift in Sources */,
 				A042CBE02CBFA4A3001A3A79 /* MarkerEditView.swift in Sources */,
 				A042CBD42CBD28F3001A3A79 /* DetailView.swift in Sources */,
-				A042CBE22CBFA702001A3A79 /* Result.swift in Sources */,
+				A042CBE22CBFA702001A3A79 /* Result1.swift in Sources */,
 				A042CBDA2CBD3788001A3A79 /* User.swift in Sources */,
+				A042CBEA2CC62CA9001A3A79 /* MeView.swift in Sources */,
 				A042CBCE2CBCED1C001A3A79 /* Book.swift in Sources */,
+				A042CBEC2CC62CE8001A3A79 /* MeetingContentView.swift in Sources */,
+				A042CBEE2CC62EB4001A3A79 /* Prospect.swift in Sources */,
 				A042CBC82CB3F304001A3A79 /* AstronautView.swift in Sources */,
 				A042CBC42CB3BBCF001A3A79 /* Color-Theme.swift in Sources */,
 				A042CAFA2CAD6D75001A3A79 /* ContentView.swift in Sources */,
@@ -226,6 +249,7 @@
 				A042CBC02CB3B2E6001A3A79 /* Bundle-Decodable.swift in Sources */,
 				A042CAF82CAD6D75001A3A79 /* WeSplitApp.swift in Sources */,
 				A042CBE42CC0DCEE001A3A79 /* ContentView-ViewModel.swift in Sources */,
+				A042CBE62CC62C7B001A3A79 /* ProspectsView.swift in Sources */,
 				A042CBBE2CB3B24B001A3A79 /* Astronaut.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,7 +386,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "save ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -391,7 +417,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "save ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -432,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A042CBEF2CC63BED001A3A79 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A042CBF02CC63BED001A3A79 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A042CBEF2CC63BED001A3A79 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A042CAEC2CAD6D75001A3A79 /* Project object */;
 }
