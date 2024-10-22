@@ -43,6 +43,11 @@ struct Filezilla: View {
         isActive = true
         loadData()
     }
+    func saveData() {
+        if let data = try? JSONEncoder().encode(cards) {
+            UserDefaults.standard.set(data, forKey: "Cards")
+        }
+    }
     var body: some View {
         ZStack {
             Image(decorative: "background")
@@ -62,7 +67,10 @@ struct Filezilla: View {
                     ForEach(0..<cards.count, id: \.self) { index in
                         CardView(card: cards[index]) {
                            withAnimation {
+                             //  let card = cards[index]
                                removeCard(at: index)
+                              // cards.append(card)
+                              // saveData()
                            }
                         }
                         .stacked(at: index, in: cards.count)

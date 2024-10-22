@@ -72,7 +72,9 @@ struct CardView: View {
                     if abs(offset.width) > 100 {
                         removal?()
                     } else {
-                        offset = .zero
+                        withAnimation{
+                            offset = .zero
+                        }
                     }
                 }
         )
