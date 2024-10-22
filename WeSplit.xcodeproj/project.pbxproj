@@ -42,6 +42,7 @@
 		A042CBF52CC7759D001A3A79 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBF42CC7759D001A3A79 /* Card.swift */; };
 		A042CBF72CC775C1001A3A79 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBF62CC775C1001A3A79 /* CardView.swift */; };
 		A042CBF92CC7B0F3001A3A79 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBF82CC7B0F3001A3A79 /* EditCards.swift */; };
+		A042CBFB2CC7BB0A001A3A79 /* LayoutAndGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042CBFA2CC7BB0A001A3A79 /* LayoutAndGeometry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		A042CBF42CC7759D001A3A79 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A042CBF62CC775C1001A3A79 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		A042CBF82CC7B0F3001A3A79 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
+		A042CBFA2CC7BB0A001A3A79 /* LayoutAndGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAndGeometry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		A042CAEB2CAD6D75001A3A79 = {
 			isa = PBXGroup;
 			children = (
+				A042CBFA2CC7BB0A001A3A79 /* LayoutAndGeometry.swift */,
 				A042CBE12CBFA702001A3A79 /* Result1.swift */,
 				A042CBC72CB3F304001A3A79 /* AstronautView.swift */,
 				A042CB052CB02C28001A3A79 /* start.txt */,
@@ -259,6 +262,7 @@
 				A042CBD22CBD27FA001A3A79 /* RatingView.swift in Sources */,
 				A042CBDE2CBF9180001A3A79 /* BucketList.swift in Sources */,
 				A042CBF92CC7B0F3001A3A79 /* EditCards.swift in Sources */,
+				A042CBFB2CC7BB0A001A3A79 /* LayoutAndGeometry.swift in Sources */,
 				A042CBD02CBCEE06001A3A79 /* AddBookView.swift in Sources */,
 				A042CBD62CBD2937001A3A79 /* EmojiRatingView.swift in Sources */,
 				A042CBCA2CB66DD3001A3A79 /* CupcakeCorner.swift in Sources */,
