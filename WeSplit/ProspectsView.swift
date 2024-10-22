@@ -17,6 +17,7 @@ enum FilterType {
 struct ProspectsView: View {
     @Query(sort: \Prospect.name) var prospects: [Prospect]
     @Environment(\.modelContext) var modelContext
+   
     @State private var isShowingScanner = false
     
     var filter: FilterType = FilterType.none

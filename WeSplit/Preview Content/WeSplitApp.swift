@@ -13,7 +13,7 @@ import SwiftData
 struct WeSplitApp: App {
     var body: some Scene {
         WindowGroup {
-            MeetingContentView()
+            Filezilla()
         }
         .modelContainer(for: Prospect.self)
 //        .modelContainer(for: User.self)
