@@ -52,6 +52,9 @@ struct EditCards: View {
             }
         }
     }
+    init() {
+        initColors()
+    }
     struct InnerView: View {
         var body: some View {
             HStack {
@@ -70,27 +73,40 @@ struct EditCards: View {
             }
         }
     }
+    var colors: [Color]  = Array()
+    mutating func initColors(){
+        (1...7).forEach{ i in
+            colors.append(Color(hue: Double.random(in: 0.1...1.0), saturation: 1, brightness: 1, opacity: 1))
+        }
+    }
+   
+    
     var body: some View {
         
-        ThreeD()
+        //ThreeD()
         
-        let colors: [Color] = [.red, .green, .blue, .orange, .pink, .purple, .yellow]
-
+       
+        
         GeometryReader { fullView in
-            ScrollView {
+            ScrollView(.vertical) {
                 ForEach(0..<50) { index in
                     GeometryReader { proxy in
                         Text("Row #\(index)")
+                        
                             .font(.title)
                             .frame(maxWidth: .infinity)
-                            .background(colors[index % 7])
+                            .background(colors[ abs(Int(proxy.frame(in: .global).minY )) % 7])
                             .rotation3DEffect(.degrees(proxy.frame(in: .global).minY - fullView.size.height / 2) / 5, axis: (x: 0, y: 1, z: 0))
-                        
+                            .opacity(proxy.frame(in: .global).minY>200 ? 1 : 0)
+                           
+                            .scaleEffect( proxy.frame(in: .global).minY/490)
+                           
                     }
                     .frame(height: 40)
                 }
             }
         }
+    
           
        
        /*
